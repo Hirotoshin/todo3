@@ -1,6 +1,7 @@
 import React from 'react';
 import {pushAdd} from '../Action/actions';
 import {connect} from 'react-redux'
+import PushDelete from './pushdelete';
 
 class PushAddButton extends React.Component{
     constructor(props){
@@ -23,7 +24,10 @@ class PushAddButton extends React.Component{
                 <ul>
                     {this.props.todo.map((todo,i) => {
                         return <li key={i}>
+                            <span>
                                 {todo.text}
+                                <PushDelete />
+                                </span>
                         </li>
                     })}
                 </ul>
